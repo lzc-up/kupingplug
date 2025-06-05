@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "home": "首页",
+    "shop": "商店",
+    "products": "产品",
+    "contact": "联系我们",
+    "cart": "购物车"
+  },
+  "common": {
+    "search": "搜索",
+    "user": "用户",
+    "language": "语言",
+    "welcome": "欢迎",
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功"
+  },
+  "hero": {
+    "title": "音乐体验",
+    "subtitle": "发现最好的音频设备"
+  },
+  "contact": {
+    "title": "联系我们",
+    "name": "姓名",
+    "email": "邮箱",
+    "subject": "主题",
+    "message": "消息",
+    "send": "发送",
+    "phone": "电话",
+    "address": "地址"
+  }
+}

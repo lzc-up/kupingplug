@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "home": "Home",
+    "shop": "Shop",
+    "products": "Products",
+    "contact": "Contact Us",
+    "cart": "Cart"
+  },
+  "common": {
+    "search": "Search",
+    "user": "User",
+    "language": "Language",
+    "welcome": "Welcome",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  },
+  "hero": {
+    "title": "Music Experience",
+    "subtitle": "Discover the best audio equipment"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send",
+    "phone": "Phone",
+    "address": "Address"
+  }
+}

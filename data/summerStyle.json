@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "image": {
+      "src": "/images/leoga/4主界面当季主推款商品1.png",
+      "alt": "Linen Shirt"
+    },
+    "rating": 5,
+    "name": "Linen Shirt",
+    "description": "Breathable & Comfortable - Perfect for warm weather with natural linen fibers that allow air circulation."
+  },
+  {
+    "id": 2,
+    "image": {
+      "src": "/images/leoga/5主界面当季主推款商品2.png",
+      "alt": "Merino Knit"
+    },
+    "rating": 5,
+    "name": "Merino Knit",
+    "description": "Lightweight & Soft - Ultra-fine merino wool provides exceptional comfort and temperature regulation."
+  },
+  {
+    "id": 3,
+    "image": {
+      "src": "/images/leoga/6主界面当季主推款商品3.png",
+      "alt": "Silk Polo"
+    },
+    "rating": 4,
+    "name": "Silk Polo",
+    "description": "Elegant & Smooth - Premium silk fabric offers luxurious feel and natural sheen for sophisticated style."
+  },
+  {
+    "id": 4,
+    "image": {
+      "src": "/images/leoga/7主界面当季主推款商品4.png",
+      "alt": "Summer Sneakers"
+    },
+    "rating": 5,
+    "name": "Summer Sneakers",
+    "description": "Stylish & Versatile - Breathable canvas and leather construction perfect for casual summer outfits."
+  },
+  {
+    "id": 5,
+    "image": {
+      "src": "/images/leoga/8主界面当季主推款商品5.png",
+      "alt": "Summer Sneakers"
+    },
+    "rating": 5,
+    "name": "Summer Sneakers",
+    "description": "Stylish & Versatile - Breathable canvas and leather construction perfect for casual summer outfits."
+  }
+]

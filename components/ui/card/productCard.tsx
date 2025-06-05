@@ -28,7 +28,6 @@ export type ProductDataProps = {
     };
     name: string;
     rating: number;
-    price: number;
     description: string;
   };
 };
@@ -53,7 +52,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({ className, children }) => {
   return (
     <div
       className={cn(
-        "group relative flex h-[308px] w-full flex-col justify-between overflow-hidden bg-[#F3F5F7] p-3.5",
+        "group relative flex h-[500px] w-full flex-col justify-between overflow-hidden bg-[#F3F5F7] p-3.5",
         className,
       )}
     >
@@ -197,21 +196,21 @@ const Name: React.FC<NameProps> = ({ className, ...props }) => {
 
 type PriceProps = Omit<TextProps, "children">;
 
-const Price: React.FC<PriceProps> = ({ className, ...props }) => {
-  const { price } = useProductCardContext();
+// const Price: React.FC<PriceProps> = ({ className, ...props }) => {
+//   const { price } = useProductCardContext();
 
-  return (
-    <Text
-      size="sm"
-      weight={600}
-      color="black/800"
-      className={cn("line-clamp-1", className)}
-      {...props}
-    >
-      {formatCurrency(price)}
-    </Text>
-  );
-};
+//   return (
+//     <Text
+//       size="sm"
+//       weight={600}
+//       color="black/800"
+//       className={cn("line-clamp-1", className)}
+//       {...props}
+//     >
+//       {formatCurrency(price)}
+//     </Text>
+//   );
+// };
 
 type DescriptionProps = Omit<TextProps, "children">;
 
@@ -242,6 +241,5 @@ export {
   Content,
   Ratings,
   Name,
-  Price,
   Description,
 };

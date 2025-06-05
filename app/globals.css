@@ -88,3 +88,14 @@
     text-align: left;
   }
 }
+
+/* 添加到文件末尾 */
+.hero-image-fade {
+  mask-image: radial-gradient(ellipse 85% 75% at center, black 50%, transparent 95%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 75% at center, black 50%, transparent 95%);
+}
+
+.hero-image-soft-fade {
+  mask-image: radial-gradient(ellipse 90% 80% at center, black 40%, rgba(0,0,0,0.8) 70%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at center, black 40%, rgba(0,0,0,0.8) 70%, transparent 100%);
+}

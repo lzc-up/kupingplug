@@ -94,7 +94,6 @@ export default function CatalogSlider() {
                 <ProductCard.Content>
                   <ProductCard.Ratings />
                   <ProductCard.Name />
-                  <ProductCard.Price />
                 </ProductCard.Content>
               </Link>
             </ProductCard.Root>

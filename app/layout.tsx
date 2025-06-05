@@ -1,28 +1,13 @@
-// package
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
-
-// lib
-import { cn } from "@/lib/utils";
-
-// css
+import { Inter } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/hooks/useTranslation";
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-poppins",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Kupingplug - Sumpel kuping untuk anda dan keluarga",
-  description: "Kupingplug - Sumpel kuping untuk anda dan keluarga",
+  title: "KupingPlug",
+  description: "Audio equipment store",
 };
 
 export default function RootLayout({
@@ -31,8 +16,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={cn(inter.variable, poppins.variable)}>
-      <body>{children}</body>
+    <html lang="en">
+      <body className={inter.className}>
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
+      </body>
     </html>
   );
 }

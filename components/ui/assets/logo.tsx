@@ -1,9 +1,16 @@
-import Text from "@/ui/text";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Logo() {
   return (
-    <Text family="poppins" weight={500} className="md:text-lg">
-      Kupingplug<span className="text-[#6C7275]">.</span>
-    </Text>
+    <Link href="/" className="relative w-full max-w-[120px] aspect-[5/2] transition-all duration-200 rounded-md">
+      <Image
+        src="/images/leoga.avif"
+        alt="LEGO Logo"
+        fill
+        className="object-contain"
+        priority
+      />
+    </Link>
   );
 }

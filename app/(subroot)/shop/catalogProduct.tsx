@@ -64,7 +64,7 @@ const CatalogProduct = () => {
                   <WishlistIcon className="h-7 w-7" />
                 </button>
               </div>
-              <ProductCard.Price />
+              {/* <ProductCard.Price /> */}
               {showDetail && (
                 <div className="space-y-4 pt-1 lg:space-y-6">
                   <ProductCard.Description className="line-clamp-3 md:text-sm" />
