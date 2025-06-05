@@ -1,4 +1,4 @@
-// package
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -11,6 +11,7 @@ import Button from "@/ui/button";
 import Heading from "@/ui/head";
 import Text from "@/ui/text";
 import CatalogSlider from "@/ui/slider/catalogSlider";
+import VideoPlayer from "@/components/ui/video/VideoPlayer";
 import * as ProductCard from "@/ui/card/productCard";
 import {
   ArrowRightIcon,
@@ -51,18 +52,12 @@ export default function Home() {
             <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
               {/* 16:9 Aspect Ratio Container */}
               <div className="absolute inset-0 bg-black rounded-lg shadow-2xl overflow-hidden">
-                {/* 这里可以放置您的视频组件 */}
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900">
-                  <div className="text-center text-white">
-                    <div className="w-20 h-20 mx-auto mb-4 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <p className="text-lg font-medium">点击播放视频</p>
-                    <p className="text-sm text-gray-300 mt-2">在这里嵌入您的视频组件</p>
-                  </div>
-                </div>
+                <VideoPlayer
+                  src="/images/leoga/tie.mp4"
+                  controls={true}
+                  muted={true}
+                  className="w-full h-full"
+                />
               </div>
             </div>
           </div>
