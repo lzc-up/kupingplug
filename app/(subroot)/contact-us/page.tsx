@@ -131,7 +131,7 @@ export default function ContactUsPage() {
                 Email
               </Heading>
               <Text className="text-[#6C7275]">
-                support@lizhichao.com
+                support@test.com
               </Text>
             </div>
 

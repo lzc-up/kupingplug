@@ -1,0 +1,42 @@
+name: Deploy to Server
+
+# 触发条件：当有代码推送到 main 分支时
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest # 使用最新的 Ubuntu 虚拟机环境
+
+    steps:
+    - name: SSH and Deploy
+      # 使用一个社区封装好的、非常流行的 SSH Action
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}             # 服务器 IP
+        username: ${{ secrets.SSH_USERNAME }}       # 服务器用户名
+        key: ${{ secrets.SSH_PRIVATE_KEY }}        # 服务器私钥
+        # port: 22  # 如果你的 SSH 端口不是 22，可以在这里指定
+
+        # 在服务器上执行的脚本
+        script: |
+          # 1. 进入你的项目目录
+          cd ${{ secrets.REMOTE_TARGET_DIR }}
+
+          # 2. 从 GitHub 拉取最新的 main 分支代码
+          git pull origin main
+
+          # 3. 安装/更新依赖
+          # 使用 npm ci 可以确保一个干净、可预测的安装，速度通常也比 install 快
+          npm ci
+
+          # 4. 重新构建 Next.js 项目
+          npm run build
+
+          # 5. 使用 PM2 重启服务
+          # 'pm2 reload' 可以实现 0 秒停机重载，比 'restart' 更好
+          # 将 <your-app-name> 替换为你用 PM2 启动时设置的应用名称或 ID
+          pm2 reload suit
