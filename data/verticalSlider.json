@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "image": {
+      "src": "/images/leoga/13主界面滑轮播放领带图1.png",
+      "alt": "Premium Wool Coat"
+    },
+    "title": "Premium Wool Coat",
+    "subtitle": "Timeless Elegance",
+    "description": "Crafted from the finest merino wool, this coat embodies sophistication and warmth for the modern professional."
+  },
+  {
+    "id": 2,
+    "image": {
+      "src": "/images/leoga/14主界面滑轮播放皮具图2.png",
+      "alt": "Silk Dress Shirt"
+    },
+    "title": "Silk Dress Shirt",
+    "subtitle": "Refined Comfort",
+    "description": "Experience unparalleled comfort with our premium silk dress shirt, perfect for both business and formal occasions."
+  },
+  {
+    "id": 3,
+    "image": {
+      "src": "/images/leoga/15主界面滑轮播放鞋履图3.jpg",
+      "alt": "Cashmere Sweater"
+    },
+    "title": "Cashmere Sweater",
+    "subtitle": "Luxurious Warmth",
+    "description": "Indulge in the ultimate luxury with our hand-knitted cashmere sweater, designed for discerning taste."
+  },
+  {
+    "id": 4,
+    "image": {
+      "src": "/images/leoga/16主界面滑轮播放配饰图4.jpg",
+      "alt": "Tailored Blazer"
+    },
+    "title": "Tailored Blazer",
+    "subtitle": "Modern Classic",
+    "description": "A contemporary take on the classic blazer, featuring impeccable tailoring and premium fabric construction."
+  }
+]

@@ -9,7 +9,7 @@ import {
 } from "@/ui/assets/svg";
 import NavLinks from "@/ui/navbar/navLinks";
 import NavMobile from "@/ui/navbar/navMobile";
-import PromoSection from "@/ui/promo";
+// import PromoSection from "@/ui/promo";
 import LanguageSwitcher from "@/ui/language-switcher";
 import HeroCarousel from "@/ui/slider/heroCarousel";
 
@@ -42,10 +42,9 @@ const Navbar: React.FC<NavbarProps> = () => {
   // 文字透明状态（用于文字颜色，只考虑页面和滚动状态）
   const isTextTransparent = isRootPage && !scroll;
 
-  console.log('Debug:', { isRootPage, scroll, isTextTransparent }); // 临时调试
   return (
     <>
-      {!open && <PromoSection />}
+      { !open }
       <div className="relative">
         {/* 背景轮播图 - 仅在首页显示 */}
         {isRootPage && (

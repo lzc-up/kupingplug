@@ -19,7 +19,7 @@ const heroImages = [
     height: 1080
   },
   {
-    src: "/images/leoga/18主界面面料背景图.png",
+    src: "/images/leoga/背景图.webp",
     alt: "Music Experience 4",
     width: 1920,
     height: 1080
@@ -49,13 +49,13 @@ export default function HeroCarousel({ className }: HeroCarouselProps) {
       if (instanceRef.current) {
         instanceRef.current.next();
       }
-    }, 4000); // 增加到4秒间隔，避免过快切换
+    }, 4000); // 3秒间隔
 
     return () => clearInterval(interval);
   }, [instanceRef]);
 
   return (
-    <div className={`relative w-full h-full ${className || ''}`}>
+    <div className="relative w-full h-full">
       <div ref={sliderRef} className="keen-slider w-full h-full">
         {heroImages.map((image, index) => (
           <div key={index} className="keen-slider__slide relative w-full h-full">
@@ -63,7 +63,7 @@ export default function HeroCarousel({ className }: HeroCarouselProps) {
               <Image
                 src={image.src}
                 fill
-                className="object-cover hero-image-fade"
+                className="object-cover"
                 alt={image.alt}
                 priority={index === 0}
               />
@@ -72,16 +72,16 @@ export default function HeroCarousel({ className }: HeroCarouselProps) {
         ))}
       </div>
 
-      {/* 轮播指示器 - 调整位置以适应背景使用 */}
-      <div className="absolute bottom-8 left-0 right-0 z-10">
-        <div className="flex justify-center space-x-2">
+      {/* 轮播指示器 */}
+      <div className="absolute bottom-4 left-0 right-0 z-10">
+        <div className="flex justify-center space-x-3">
           {heroImages.map((_, index) => (
             <button
               key={index}
               onClick={() => instanceRef.current?.moveToIdx(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-20 h-1 rounded-none transition-all duration-300 ${
                 currentSlide === index
-                  ? "bg-white scale-110 shadow-lg"
+                  ? "bg-white shadow-lg"
                   : "bg-white/50 hover:bg-white/75"
               }`}
               aria-label={`Go to slide ${index + 1}`}

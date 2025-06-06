@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import Link from "next/link";
 import Image from "next/image";
 
@@ -20,9 +20,9 @@ import {
   LockIcon,
   MoneyIcon,
 } from "@/ui/assets/svg";
-
-// data
-import products from "@/data/product.json";
+import VerticalImageSlider from "@/ui/sections/VerticalImageSlider";
+import CustomizationSection from "@/ui/sections/CustomizationSection";
+import FabricSection from "@/ui/sections/FabricSection";
 
 export default function Home() {
   return (
@@ -40,10 +40,10 @@ export default function Home() {
               intent="base-section"
               className="mb-4"
             >
-              体验我们的产品
+              The Art of Tailored Excellence
             </Heading>
-            <Text className="text-gray-600 max-w-2xl mx-auto">
-              通过视频了解我们产品的卓越品质和创新设计
+            <Text className="text-gray-600 max-w-4xl mx-auto">
+              Discover the timeless elegance and sophisticated craftsmanship behind our premium suit collection. From classic business attire to contemporary formal wear, experience how traditional tailoring meets modern innovation. Our suits embody the perfect fusion of heritage techniques and cutting-edge design, creating garments that define professional excellence and personal style.
             </Text>
           </div>
           
@@ -64,21 +64,14 @@ export default function Home() {
         </div>
       </SectionLayout>
 
-      {/* Product section */}
-      <SectionLayout>
-        <div className="space-y-10 p-8">
-          <Heading
-            as="h2"
-            intent="base-section"
-            className="text-center md:text-left"
-          >
-            New Arrivals
-          </Heading>
+      {/* 新增垂直图片滑动组件 */}
+      <VerticalImageSlider />
 
-          {/* catalog product slider */}
-          <CatalogSlider />
-        </div>
-      </SectionLayout>
+      {/* 新增定制section */}
+      <CustomizationSection />
+
+      {/* 新增面料section */}
+      <FabricSection />
       
       {/* 其余内容保持不变 */}
     </>

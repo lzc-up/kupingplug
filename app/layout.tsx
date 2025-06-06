@@ -6,8 +6,8 @@ import { LanguageProvider } from "@/hooks/useTranslation";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "KupingPlug",
-  description: "Audio equipment store",
+  title: "LEO",
+  description: "SUIT-STORE",
 };
 
 export default function RootLayout({

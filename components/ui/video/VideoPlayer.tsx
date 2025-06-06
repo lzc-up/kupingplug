@@ -10,7 +10,7 @@ interface VideoPlayerProps {
   loop?: boolean;
 }
 
-const VideoPlayer: React.FC<VideoPlayerProps> = ({
+const VideoPlayer = ({
   src,
   poster,
   className = '',
@@ -18,7 +18,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   controls = true,
   muted = false,
   loop = false,
-}) => {
+}: VideoPlayerProps ) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [showControls, setShowControls] = useState(true);

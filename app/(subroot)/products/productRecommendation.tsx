@@ -35,7 +35,7 @@ const ProductRecommendation = () => {
             <ProductCard.Content>
               <ProductCard.Ratings />
               <ProductCard.Name />
-              <ProductCard.Price />
+              {/* <ProductCard.Price /> */}
             </ProductCard.Content>
           </ProductCard.Root>
         ))}
