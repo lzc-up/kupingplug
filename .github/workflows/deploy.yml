@@ -13,32 +13,29 @@ jobs:
 
     steps:
     - name: SSH and Deploy
-      # 使用一个社区封装好的、非常流行的 SSH Action
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.SSH_HOST }}             # 服务器 IP
         username: ${{ secrets.SSH_USERNAME }}       # 服务器用户名
         key: ${{ secrets.SSH_PRIVATE_KEY }}        # 服务器私钥
-        # port: 22  # 如果你的 SSH 端口不是 22，可以在这里指定
+        # port: 22
 
-        # 在服务器上执行的脚本
         script: |
           # 1. 进入你的项目目录
           cd ${{ secrets.REMOTE_TARGET_DIR }}
 
           # 2. 从 GitHub 拉取最新的 main 分支代码
-          # 添加 git 配置来忽略所有权检查
           git config --global --add safe.directory ${{ secrets.REMOTE_TARGET_DIR }}
           git pull origin main
 
-          # 3. 安装/更新依赖
-          # 使用 npm ci 可以确保一个干净、可预测的安装，速度通常也比 install 快
-          # 使用绝对路径执行npm命令
-          /root/.nvm/versions/node/v22.16.0/bin/npm ci
+          # 3. 设置 Node.js 的 PATH 环境变量
+          export PATH="/root/.nvm/versions/node/v22.16.0/bin:$PATH"
 
-          # 4. 重新构建 Next.js 项目
-          /root/.nvm/versions/node/v22.16.0/bin/npm run build
+          # 4. 安装/更新依赖
+          npm ci
 
-          # 5. 使用 PM2 重启服务
-          # 'pm2 reload' 可以实现 0 秒停机重载，比 'restart' 更好
-          /root/.nvm/versions/node/v22.16.0/bin/pm2 reload suit
+          # 5. 重新构建 Next.js 项目
+          npm run build
+
+          # 6. 使用 PM2 重启服务
+          pm2 reload suit
