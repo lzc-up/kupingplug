@@ -27,10 +27,13 @@ jobs:
           cd ${{ secrets.REMOTE_TARGET_DIR }}
 
           # 2. 从 GitHub 拉取最新的 main 分支代码
+          # 添加 git 配置来忽略所有权检查
+          git config --global --add safe.directory ${{ secrets.REMOTE_TARGET_DIR }}
           git pull origin main
 
           # 3. 安装/更新依赖
           # 使用 npm ci 可以确保一个干净、可预测的安装，速度通常也比 install 快
+          source ~/.bashrc  # 加载环境变量，确保能找到npm命令
           npm ci
 
           # 4. 重新构建 Next.js 项目
@@ -38,5 +41,4 @@ jobs:
 
           # 5. 使用 PM2 重启服务
           # 'pm2 reload' 可以实现 0 秒停机重载，比 'restart' 更好
-          # 将 <your-app-name> 替换为你用 PM2 启动时设置的应用名称或 ID
           pm2 reload suit
