@@ -93,7 +93,7 @@
   {
     "id": 8,
     "image": {
-      "src": "/images/leoga/product/13产品页上装3.png",
+      "src": "/images/leoga/product/13产品页上装3.PNG",
       "alt": "上装1"
     },
     "category": "上装",
@@ -106,7 +106,7 @@
   {
     "id": 9,
     "image": {
-      "src": "/images/leoga/product/14产品页上装4.png",
+      "src": "/images/leoga/product/14产品页上装4.PNG",
       "alt": "上装2"
     },
     "category": "上装",
@@ -119,7 +119,7 @@
   {
     "id": 10,
     "image": {
-      "src": "/images/leoga/product/15产品页上装5.png",
+      "src": "/images/leoga/product/15产品页上装5.PNG",
       "alt": "上装3"
     },
     "category": "上装",
@@ -132,7 +132,7 @@
   {
     "id": 11,
     "image": {
-      "src": "/images/leoga/product/16产品页下装1.png",
+      "src": "/images/leoga/product/16产品页下装1.PNG",
       "alt": "下装1"
     },
     "category": "下装",
@@ -145,7 +145,7 @@
   {
     "id": 12,
     "image": {
-      "src": "/images/leoga/product/17产品页下装2.png",
+      "src": "/images/leoga/product/17产品页下装2.PNG",
       "alt": "下装2"
     },
     "category": "下装",
@@ -158,7 +158,7 @@
   {
     "id": 13,
     "image": {
-      "src": "/images/leoga/product/18产品页下装3.png",
+      "src": "/images/leoga/product/18产品页下装3.PNG",
       "alt": "下装3"
     },
     "category": "下装",
@@ -171,7 +171,7 @@
   {
     "id": 14,
     "image": {
-      "src": "/images/leoga/product/19产品页下装4.png",
+      "src": "/images/leoga/product/19产品页下装4.PNG",
       "alt": "下装4"
     },
     "category": "下装",
@@ -184,7 +184,7 @@
   {
     "id": 15,
     "image": {
-      "src": "/images/leoga/product/20产品页下装5.jpeg",
+      "src": "/images/leoga/product/20产品页下装5.JPEG",
       "alt": "下装5"
     },
     "category": "下装",
@@ -260,9 +260,9 @@
     "featured": false
   },
   {
-    "id": 22,
+    "id": 21,
     "image": {
-      "src": "/images/leoga/product/13产品页上装3.png",
+      "src": "/images/leoga/product/13产品页上装3.PNG",
       "alt": "套装3"
     },
     "category": "套装",
@@ -273,9 +273,9 @@
     "featured": true
   },
   {
-    "id": 23,
+    "id": 22,
     "image": {
-      "src": "/images/leoga/product/11产品页上装1.png",
+      "src": "/images/leoga/product/14产品页上装4.PNG",
       "alt": "上装4"
     },
     "category": "上装",
@@ -286,9 +286,9 @@
     "featured": false
   },
   {
-    "id": 24,
+    "id": 23,
     "image": {
-      "src": "/images/leoga/product/12产品页上装2.png",
+      "src": "/images/leoga/product/15产品页上装5.PNG",
       "alt": "上装5"
     },
     "category": "上装",
@@ -299,9 +299,9 @@
     "featured": false
   },
   {
-    "id": 25,
+    "id": 24,
     "image": {
-      "src": "/images/leoga/product/6产品页新品6.png",
+      "src": "/images/leoga/product/1产品页新品1.png",
       "alt": "新品6"
     },
     "category": "新品",
@@ -312,9 +312,9 @@
     "featured": true
   },
   {
-    "id": 26,
+    "id": 25,
     "image": {
-      "src": "/images/leoga/product/7产品页新品7.png",
+      "src": "/images/leoga/product/2产品页新品2.png",
       "alt": "新品7"
     },
     "category": "新品",
@@ -325,9 +325,9 @@
     "featured": true
   },
   {
-    "id": 27,
+    "id": 26,
     "image": {
-      "src": "/images/leoga/product/28产品页套装4.png",
+      "src": "/images/leoga/product/26产品页下半部分商品详情图2.png",
       "alt": "套装4"
     },
     "category": "套装",
@@ -338,9 +338,9 @@
     "featured": false
   },
   {
-    "id": 28,
+    "id": 27,
     "image": {
-      "src": "/images/leoga/product/29产品页套装5.png",
+      "src": "/images/leoga/product/27产品页下半部分商品详情图3.png",
       "alt": "套装5"
     },
     "category": "套装",

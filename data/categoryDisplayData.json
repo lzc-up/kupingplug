@@ -55,14 +55,14 @@
       {
         "id": "formal",
         "name": "礼服",
-        "image": "/images/leoga/product/28产品页套装4.png",
+        "image": "/images/leoga/product/21产品页配饰1.png",
         "description": "正式礼服系列",
         "categoryKey": "suits"
       },
       {
         "id": "custom",
         "name": "特别定制",
-        "image": "/images/leoga/product/29产品页套装5.png",
+        "image": "/images/leoga/product/22产品页配饰2.png",
         "description": "专属定制系列",
         "categoryKey": "suits"
       }
@@ -71,7 +71,7 @@
       {
         "id": "shirt",
         "name": "衬衫",
-        "image": "/images/leoga/product/14产品页上装4.png",
+        "image": "/images/leoga/product/14产品页上装4.PNG",
         "description": "商务休闲衬衫",
         "categoryKey": "tops"
       },
@@ -85,14 +85,14 @@
       {
         "id": "blazer",
         "name": "西装外套",
-        "image": "/images/leoga/product/13产品页上装3.png",
+        "image": "/images/leoga/product/13产品页上装3.PNG",
         "description": "正装西装外套",
         "categoryKey": "tops"
       },
       {
         "id": "sweater",
         "name": "毛衣",
-        "image": "/images/leoga/product/14产品页上装4.png",
+        "image": "/images/leoga/product/16产品页下装1.PNG",
         "description": "舒适毛衣系列",
         "categoryKey": "tops"
       }
@@ -101,28 +101,28 @@
       {
         "id": "pants",
         "name": "长裤",
-        "image": "/images/leoga/product/15产品页上装5.PNG",
+        "image": "/images/leoga/product/17产品页下装2.PNG",
         "description": "商务休闲长裤",
         "categoryKey": "bottoms"
       },
       {
         "id": "trousers",
         "name": "西装裤",
-        "image": "/images/leoga/product/17产品页下装2.png",
+        "image": "/images/leoga/product/18产品页下装3.PNG",
         "description": "正装西装裤",
         "categoryKey": "bottoms"
       },
       {
         "id": "shorts",
         "name": "短裤",
-        "image": "/images/leoga/product/18产品页下装3.png",
+        "image": "/images/leoga/product/19产品页下装4.PNG",
         "description": "夏季短裤系列",
         "categoryKey": "bottoms"
       },
       {
         "id": "jeans",
         "name": "牛仔裤",
-        "image": "/images/leoga/product/19产品页下装4.png",
+        "image": "/images/leoga/product/20产品页下装5.JPEG",
         "description": "时尚牛仔裤",
         "categoryKey": "bottoms"
       }

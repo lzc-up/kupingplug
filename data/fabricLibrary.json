@@ -1,0 +1,144 @@
+{
+  "fabricLibrary": [
+    {
+      "id": 1,
+      "name": "新品系列1",
+      "image": "/images/leoga/product/1产品页新品1.png",
+      "category": "新品",
+      "description": "Premium fabric collection"
+    },
+    {
+      "id": 2,
+      "name": "新品系列2",
+      "image": "/images/leoga/product/2产品页新品2.png",
+      "category": "新品",
+      "description": "Premium fabric collection"
+    },
+    {
+      "id": 3,
+      "name": "新品系列3",
+      "image": "/images/leoga/product/3产品页新品3.png",
+      "category": "新品",
+      "description": "Premium fabric collection"
+    },
+    {
+      "id": 4,
+      "name": "新品系列4",
+      "image": "/images/leoga/product/4产品页新品4.png",
+      "category": "新品",
+      "description": "Premium fabric collection"
+    },
+    {
+      "id": 5,
+      "name": "新品系列5",
+      "image": "/images/leoga/product/5产品页新品5.png",
+      "category": "新品",
+      "description": "Premium fabric collection"
+    },
+    {
+      "id": 6,
+      "name": "上装系列3",
+      "image": "/images/leoga/product/13产品页上装3.PNG",
+      "category": "上装",
+      "description": "Premium fabric collection"
+    },
+    {
+      "id": 7,
+      "name": "上装系列4",
+      "image": "/images/leoga/product/14产品页上装4.PNG",
+      "category": "上装",
+      "description": "Premium fabric collection"
+    },
+    {
+      "id": 8,
+      "name": "上装系列5",
+      "image": "/images/leoga/product/15产品页上装5.PNG",
+      "category": "上装",
+      "description": "Premium fabric collection"
+    },
+    {
+      "id": 9,
+      "name": "下装系列1",
+      "image": "/images/leoga/product/16产品页下装1.PNG",
+      "category": "下装",
+      "description": "Premium fabric collection"
+    },
+    {
+      "id": 10,
+      "name": "下装系列2",
+      "image": "/images/leoga/product/17产品页下装2.PNG",
+      "category": "下装",
+      "description": "Premium fabric collection"
+    },
+    {
+      "id": 11,
+      "name": "下装系列3",
+      "image": "/images/leoga/product/18产品页下装3.PNG",
+      "category": "下装",
+      "description": "Premium fabric collection"
+    },
+    {
+      "id": 12,
+      "name": "下装系列4",
+      "image": "/images/leoga/product/19产品页下装4.PNG",
+      "category": "下装",
+      "description": "Premium fabric collection"
+    },
+    {
+      "id": 13,
+      "name": "下装系列5",
+      "image": "/images/leoga/product/20产品页下装5.JPEG",
+      "category": "下装",
+      "description": "Premium fabric collection"
+    },
+    {
+      "id": 14,
+      "name": "配饰系列1",
+      "image": "/images/leoga/product/21产品页配饰1.png",
+      "category": "配饰",
+      "description": "Premium fabric collection"
+    },
+    {
+      "id": 15,
+      "name": "配饰系列2",
+      "image": "/images/leoga/product/22产品页配饰2.png",
+      "category": "配饰",
+      "description": "Premium fabric collection"
+    },
+    {
+      "id": 16,
+      "name": "配饰系列3",
+      "image": "/images/leoga/product/23产品页配饰3.png",
+      "category": "配饰",
+      "description": "Premium fabric collection"
+    },
+    {
+      "id": 17,
+      "name": "配饰系列4",
+      "image": "/images/leoga/product/24产品页配饰4.png",
+      "category": "配饰",
+      "description": "Premium fabric collection"
+    },
+    {
+      "id": 18,
+      "name": "配饰系列5",
+      "image": "/images/leoga/product/25产品页配饰5.png",
+      "category": "配饰",
+      "description": "Premium fabric collection"
+    },
+    {
+      "id": 19,
+      "name": "商品详情2",
+      "image": "/images/leoga/product/26产品页下半部分商品详情图2.png",
+      "category": "详情",
+      "description": "Premium fabric collection"
+    },
+    {
+      "id": 20,
+      "name": "商品详情3",
+      "image": "/images/leoga/product/27产品页下半部分商品详情图3.png",
+      "category": "详情",
+      "description": "Premium fabric collection"
+    }
+  ]
+}
