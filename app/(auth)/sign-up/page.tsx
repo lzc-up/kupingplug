@@ -32,7 +32,7 @@ export default function Page() {
             weight={500}
             className="absolute left-0 top-8 w-full text-center"
           >
-            Kupingplug
+            LEOGA
           </Text>
 
           <Image
@@ -84,25 +84,6 @@ export default function Page() {
                   type="password"
                   placeholder="Password"
                 />
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="h-6 w-6 rounded-md border border-[#6C7275]"></div>
-                <Text
-                  size="xs"
-                  weight={400}
-                  color="gray"
-                  className="md:text-sm"
-                >
-                  I agree with{" "}
-                  <span className="font-semibold text-[#141718]">
-                    Privacy Policy
-                  </span>{" "}
-                  and{" "}
-                  <span className="font-semibold text-[#141718]">
-                    Terms of Use
-                  </span>
-                </Text>
-                <p></p>
               </div>
             </div>
 

@@ -1,0 +1,36 @@
+{
+  "productCategories": [
+    {
+      "key": "all",
+      "category": "全部",
+      "nameKey": "nav.productCategories.all"
+    },
+    {
+      "key": "newArrivals",
+      "category": "新品",
+      "nameKey": "nav.productCategories.newArrivals",
+      "featured": true
+    },
+    {
+      "key": "suits",
+      "category": "套装",
+      "nameKey": "nav.productCategories.suits",
+      "isSpecial": true
+    },
+    {
+      "key": "tops",
+      "category": "上装",
+      "nameKey": "nav.productCategories.tops"
+    },
+    {
+      "key": "bottoms",
+      "category": "下装",
+      "nameKey": "nav.productCategories.bottoms"
+    },
+    {
+      "key": "accessories",
+      "category": "配饰",
+      "nameKey": "nav.productCategories.accessories"
+    }
+  ]
+}

@@ -1,10 +1,73 @@
 {
   "nav": {
     "home": "首页",
-    "shop": "商店",
+    "fabric": "面料",
     "products": "产品",
+    "brandStory": "品牌故事",
     "contact": "联系我们",
-    "cart": "购物车"
+    "cart": "购物车",
+    "productCategories": {
+      "all": "全部",
+      "newArrivals": "新品",
+      "suits": "套装",
+      "tops": "上装",
+      "bottoms": "下装",
+      "accessories": "配饰",
+      "礼服": "礼服",
+      "特别订制": "特别订制",
+      "suitCategories": {
+        "jackets": "外套",
+        "pants": "裤装",
+        "shirts": "衬衫",
+        "accessories": "配饰"
+      }
+    }
+  },
+  "products": {
+    "names": {
+      "newCollection1": "新品系列1",
+      "newCollection2": "新品系列2",
+      "newCollection3": "新品系列3",
+      "newCollection4": "新品系列4",
+      "newCollection5": "新品系列5",
+      "classicSuit1": "经典套装1",
+      "classicSuit2": "经典套装2",
+      "premiumTop1": "精品上装1",
+      "premiumTop2": "精品上装2",
+      "premiumTop3": "精品上装3",
+      "classicBottom1": "经典下装1",
+      "classicBottom2": "经典下装2",
+      "classicBottom3": "经典下装3",
+      "classicBottom4": "经典下装4",
+      "classicBottom5": "经典下装5",
+      "accessory1": "精美配饰1",
+      "accessory2": "精美配饰2",
+      "accessory3": "精美配饰3",
+      "accessory4": "精美配饰4",
+      "accessory5": "精美配饰5"
+    },
+    "descriptions": {
+      "newCollection1": "最新推出的时尚单品，融合现代设计与经典元素",
+      "newCollection2": "精心打造的优质面料，舒适与美观并重",
+      "newCollection3": "独特的设计理念，展现个人风格",
+      "newCollection4": "高品质工艺，细节彰显品味",
+      "newCollection5": "经典与现代的完美结合",
+      "classicSuit1": "完美搭配的套装组合，展现专业优雅",
+      "classicSuit2": "时尚套装设计，适合多种场合",
+      "premiumTop1": "优雅的上装设计，适合多种场合",
+      "premiumTop2": "舒适面料，精致剪裁",
+      "premiumTop3": "时尚与实用的完美平衡",
+      "classicBottom1": "经典款式，百搭实用",
+      "classicBottom2": "优质面料，舒适体验",
+      "classicBottom3": "精心设计，展现优雅",
+      "classicBottom4": "现代剪裁，时尚感十足",
+      "classicBottom5": "多样化选择，满足不同需求",
+      "accessory1": "精致配饰，提升整体造型",
+      "accessory2": "独特设计，彰显个性",
+      "accessory3": "高品质材料，精工制作",
+      "accessory4": "时尚元素，完美搭配",
+      "accessory5": "经典款式，永不过时"
+    }
   },
   "common": {
     "search": "搜索",

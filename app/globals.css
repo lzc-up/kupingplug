@@ -99,3 +99,14 @@
   mask-image: radial-gradient(ellipse 90% 80% at center, black 40%, rgba(0,0,0,0.8) 70%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 90% 80% at center, black 40%, rgba(0,0,0,0.8) 70%, transparent 100%);
 }
+
+
+/* 隐藏滚动条但保持滚动功能 */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}

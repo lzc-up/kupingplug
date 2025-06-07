@@ -1,10 +1,66 @@
 {
   "nav": {
     "home": "Home",
-    "shop": "Shop",
+    "fabric": "Fabric",
     "products": "Products",
+    "brandStory": "Brand Story",
     "contact": "Contact Us",
-    "cart": "Cart"
+    "cart": "Cart",
+    "productCategories": {
+      "newArrivals": "New Arrivals",
+      "suits": "Suits",
+      "tops": "Tops",
+      "bottoms": "Bottoms",
+      "accessories": "Accessories",
+      "featured": "Featured",
+      "all": "All"
+    }
+  },
+  "products": {
+    "names": {
+      "newCollection1": "New Collection 1",
+      "newCollection2": "New Collection 2",
+      "newCollection3": "New Collection 3",
+      "newCollection4": "New Collection 4",
+      "newCollection5": "New Collection 5",
+      "classicSuit1": "Classic Suit 1",
+      "classicSuit2": "Classic Suit 2",
+      "premiumTop1": "Premium Top 1",
+      "premiumTop2": "Premium Top 2",
+      "premiumTop3": "Premium Top 3",
+      "classicBottom1": "Classic Bottom 1",
+      "classicBottom2": "Classic Bottom 2",
+      "classicBottom3": "Classic Bottom 3",
+      "classicBottom4": "Classic Bottom 4",
+      "classicBottom5": "Classic Bottom 5",
+      "accessory1": "Elegant Accessory 1",
+      "accessory2": "Elegant Accessory 2",
+      "accessory3": "Elegant Accessory 3",
+      "accessory4": "Elegant Accessory 4",
+      "accessory5": "Elegant Accessory 5"
+    },
+    "descriptions": {
+      "newCollection1": "Latest fashion items that blend modern design with classic elements",
+      "newCollection2": "Carefully crafted premium fabrics, balancing comfort and beauty",
+      "newCollection3": "Unique design philosophy showcasing personal style",
+      "newCollection4": "High-quality craftsmanship with attention to detail",
+      "newCollection5": "Perfect combination of classic and modern",
+      "classicSuit1": "Perfectly matched suit combinations showcasing professional elegance",
+      "classicSuit2": "Fashion suit design suitable for various occasions",
+      "premiumTop1": "Elegant top design suitable for various occasions",
+      "premiumTop2": "Comfortable fabrics with exquisite tailoring",
+      "premiumTop3": "Perfect balance of fashion and practicality",
+      "classicBottom1": "Classic style, versatile and practical",
+      "classicBottom2": "Premium fabrics for comfortable experience",
+      "classicBottom3": "Carefully designed to showcase elegance",
+      "classicBottom4": "Modern tailoring with full sense of fashion",
+      "classicBottom5": "Diverse choices to meet different needs",
+      "accessory1": "Exquisite accessories to enhance overall styling",
+      "accessory2": "Unique design showcasing personality",
+      "accessory3": "High-quality materials with fine craftsmanship",
+      "accessory4": "Fashion elements with perfect matching",
+      "accessory5": "Classic style that never goes out of fashion"
+    }
   },
   "common": {
     "search": "Search",

@@ -1,0 +1,173 @@
+{
+  "categoryDisplayData": {
+    "新品": [
+      {
+        "id": "new1",
+        "name": "春季新品",
+        "image": "/images/leoga/product/1产品页新品1.png",
+        "description": "春季时尚新款",
+        "categoryKey": "newArrivals"
+      },
+      {
+        "id": "new2",
+        "name": "夏季新品",
+        "image": "/images/leoga/product/2产品页新品2.png",
+        "description": "夏季清爽系列",
+        "categoryKey": "newArrivals"
+      },
+      {
+        "id": "new3",
+        "name": "秋季新品",
+        "image": "/images/leoga/product/3产品页新品3.png",
+        "description": "秋季经典款式",
+        "categoryKey": "newArrivals"
+      },
+      {
+        "id": "new4",
+        "name": "冬季新品",
+        "image": "/images/leoga/product/4产品页新品4.png",
+        "description": "冬季保暖系列",
+        "categoryKey": "newArrivals"
+      },
+      {
+        "id": "new5",
+        "name": "四季新品",
+        "image": "/images/leoga/product/5产品页新品5.png",
+        "description": "四季系列",
+        "categoryKey": "newArrivals"
+      }
+    ],
+    "套装": [
+      {
+        "id": "daily",
+        "name": "日常",
+        "image": "/images/leoga/product/26产品页下半部分商品详情图2.png",
+        "description": "日常休闲系列",
+        "categoryKey": "suits"
+      },
+      {
+        "id": "professional",
+        "name": "职业",
+        "image": "/images/leoga/product/27产品页下半部分商品详情图3.png",
+        "description": "职业精英系列",
+        "categoryKey": "suits"
+      },
+      {
+        "id": "formal",
+        "name": "礼服",
+        "image": "/images/leoga/product/28产品页套装4.png",
+        "description": "正式礼服系列",
+        "categoryKey": "suits"
+      },
+      {
+        "id": "custom",
+        "name": "特别定制",
+        "image": "/images/leoga/product/29产品页套装5.png",
+        "description": "专属定制系列",
+        "categoryKey": "suits"
+      }
+    ],
+    "上装": [
+      {
+        "id": "shirt",
+        "name": "衬衫",
+        "image": "/images/leoga/product/14产品页上装4.png",
+        "description": "商务休闲衬衫",
+        "categoryKey": "tops"
+      },
+      {
+        "id": "jacket",
+        "name": "外套",
+        "image": "/images/leoga/product/15产品页上装5.PNG",
+        "description": "时尚外套系列",
+        "categoryKey": "tops"
+      },
+      {
+        "id": "blazer",
+        "name": "西装外套",
+        "image": "/images/leoga/product/13产品页上装3.png",
+        "description": "正装西装外套",
+        "categoryKey": "tops"
+      },
+      {
+        "id": "sweater",
+        "name": "毛衣",
+        "image": "/images/leoga/product/14产品页上装4.png",
+        "description": "舒适毛衣系列",
+        "categoryKey": "tops"
+      }
+    ],
+    "下装": [
+      {
+        "id": "pants",
+        "name": "长裤",
+        "image": "/images/leoga/product/15产品页上装5.PNG",
+        "description": "商务休闲长裤",
+        "categoryKey": "bottoms"
+      },
+      {
+        "id": "trousers",
+        "name": "西装裤",
+        "image": "/images/leoga/product/17产品页下装2.png",
+        "description": "正装西装裤",
+        "categoryKey": "bottoms"
+      },
+      {
+        "id": "shorts",
+        "name": "短裤",
+        "image": "/images/leoga/product/18产品页下装3.png",
+        "description": "夏季短裤系列",
+        "categoryKey": "bottoms"
+      },
+      {
+        "id": "jeans",
+        "name": "牛仔裤",
+        "image": "/images/leoga/product/19产品页下装4.png",
+        "description": "时尚牛仔裤",
+        "categoryKey": "bottoms"
+      }
+    ],
+    "配饰": [
+      {
+        "id": "tie",
+        "name": "领带",
+        "image": "/images/leoga/product/21产品页配饰1.png",
+        "description": "商务领带系列",
+        "categoryKey": "accessories"
+      },
+      {
+        "id": "bowtie",
+        "name": "领结",
+        "image": "/images/leoga/product/22产品页配饰2.png",
+        "description": "正式场合领结",
+        "categoryKey": "accessories"
+      },
+      {
+        "id": "belt",
+        "name": "腰带",
+        "image": "/images/leoga/product/23产品页配饰3.png",
+        "description": "皮质腰带系列",
+        "categoryKey": "accessories"
+      },
+      {
+        "id": "cufflinks",
+        "name": "袖扣",
+        "image": "/images/leoga/product/24产品页配饰4.png",
+        "description": "精致袖扣系列",
+        "categoryKey": "accessories"
+      }
+    ]
+  },
+  "categoryMapping": {
+    "新品": "newArrivals",
+    "New Arrivals": "newArrivals",
+    "套装": "suits",
+    "Suits": "suits",
+    "上装": "tops",
+    "Tops": "tops",
+    "下装": "bottoms",
+    "Bottoms": "bottoms",
+    "配饰": "accessories",
+    "Accessories": "accessories"
+  }
+}

@@ -15,31 +15,11 @@ import {
   YoutubeIcon,
 } from "@/ui/assets/svg";
 
+// hooks
+import { useTranslation } from "@/hooks/useTranslation";
+
 // lib
 import { cn } from "@/lib/utils";
-
-const links = [
-  {
-    id: "home",
-    path: "/",
-    name: "Home",
-  },
-  {
-    id: "shop",
-    path: "/shop",
-    name: "Shop",
-  },
-  {
-    id: "product",
-    path: "/product",
-    name: "Product",
-  },
-  {
-    id: "contact-us",
-    path: "/contact-us",
-    name: "Contact Us",
-  },
-];
 
 export default function NavMobile({
   onClick,
@@ -48,6 +28,36 @@ export default function NavMobile({
   onClick: () => void;
   open: boolean;
 }) {
+  const { t } = useTranslation();
+
+  const links = [
+    {
+      id: "home",
+      path: "/",
+      name: t("nav.home"),
+    },
+    {
+      id: "products",
+      path: "/products",
+      name: t("nav.products"),
+    },
+    {
+      id: "fabric",
+      path: "/fabric",
+      name: t("nav.fabric"),
+    },
+    {
+      id: "brand-story",
+      path: "/brand-story",
+      name: t("nav.brandStory"),
+    },
+    {
+      id: "contact-us",
+      path: "/contact-us",
+      name: t("nav.contact"),
+    },
+  ];
+
   return (
     <div
       className={cn(
@@ -107,7 +117,7 @@ export default function NavMobile({
                 className="flex items-center justify-between border-b border-[#E8ECEF] py-4"
               >
                 <span className="font-inter text-sm font-medium text-[#141718]">
-                  Cart
+                  {t("nav.cart")}
                 </span>
 
                 <div className="flex items-center gap-1.5">

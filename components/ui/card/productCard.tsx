@@ -18,6 +18,8 @@ import {
   ProductCardProvider,
   useProductCardContext,
 } from "@/hooks/productCardContext";
+// 移除重复的 Image 导入
+import { useTranslation } from '@/hooks/useTranslation';
 
 export type ProductDataProps = {
   data: {
@@ -243,3 +245,64 @@ export {
   Name,
   Description,
 };
+
+
+interface ProductCardProps {
+  product: {
+    id: number;
+    image: { src: string; alt: string };
+    category: string;
+    name: string;
+    description: string;
+    nameKey: string;
+    descriptionKey: string;
+    featured: boolean;
+  };
+  variant?: 'default' | 'compact' | 'featured';
+  onClick?: (productId: number) => void;
+}
+
+export const ProductCard: React.FC<ProductCardProps> = ({ 
+  product, 
+  variant = 'default',
+  onClick 
+}) => {
+  const { t } = useTranslation();
+  
+  return (
+    <div 
+      className={`group cursor-pointer transition-all duration-300 ${
+        variant === 'featured' ? 'transform hover:scale-105' : 'hover:shadow-lg'
+      }`}
+      onClick={() => onClick?.(product.id)}
+    >
+      <div className="relative aspect-square overflow-hidden rounded-lg bg-gray-100">
+                <NextImage
+                  src={product.image.src}
+                  alt={product.image.alt}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+        {product.featured && (
+          <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 text-xs rounded">
+            {t('common.featured')}
+          </div>
+        )}
+      </div>
+      
+      <div className="mt-4 space-y-2">
+        <h3 className="font-medium text-gray-900">
+          {t(`products.names.${product.nameKey}`)}
+        </h3>
+        <p className="text-sm text-gray-600 line-clamp-2">
+          {t(`products.descriptions.${product.descriptionKey}`)}
+        </p>
+        <span className="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-700 rounded">
+          {product.category}
+        </span>
+      </div>
+    </div>
+  );
+};
+export default ProductCard;

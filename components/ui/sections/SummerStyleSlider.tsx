@@ -5,7 +5,20 @@ import { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 
 // ui
+// 将这行
 import * as ProductCard from "@/ui/card/productCard";
+
+// 改为
+import {
+  Root,
+  Thumbnail,
+  ThumbnailBadge,
+  WishlistButton,
+  Image,
+  Content,
+  Ratings,
+  Name
+} from "@/ui/card/productCard";
 import Heading from "@/ui/head";
 import Text from "@/ui/text";
 import SectionLayout from "@/layouts/sectionLayout";

@@ -1,4 +1,4 @@
-// package
+"use client";
 import Link from "next/link";
 
 // layouts
@@ -8,7 +8,12 @@ import SectionLayout from "@/layouts/sectionLayout";
 import Text from "@/ui/text";
 import { FacebookIcon, InstagramIcon, YoutubeIcon } from "@/ui/assets/svg";
 
+// hooks
+import { useTranslation } from "@/hooks/useTranslation";
+
 const Footer = () => {
+  const { t } = useTranslation();
+  
   return (
     <SectionLayout bg="bg-[#141718]">
       <div className="space-y-10 px-8 py-12 lg:space-y-12">
@@ -19,25 +24,25 @@ const Footer = () => {
             </h3>
             <span className="h-[1px] w-8 rounded-full bg-[#6C7275] lg:hidden"></span>
             <Text size="sm" color="white/900" className="lg:pl-8">
-              Suit Store
+              Headphone Store
             </Text>
           </div>
 
           <ul className="flex flex-col gap-8 lg:flex-row lg:gap-10">
             <li className="text-center font-inter text-sm font-normal text-[#FEFEFE]">
-              <Link href="/">Home</Link>
+              <Link href="/">{t('nav.home')}</Link>
             </li>
             <li className="text-center font-inter text-sm font-normal text-[#FEFEFE]">
-              <Link href="/">Shop</Link>
+              <Link href="/products">{t('nav.products')}</Link>
             </li>
             <li className="text-center font-inter text-sm font-normal text-[#FEFEFE]">
-              <Link href="/">Product</Link>
+              <Link href="/fabric">{t('nav.fabric')}</Link>
             </li>
             <li className="text-center font-inter text-sm font-normal text-[#FEFEFE]">
-              <Link href="/">Blog</Link>
+              <Link href="/brand-story">{t('nav.brandStory')}</Link>
             </li>
             <li className="text-center font-inter text-sm font-normal text-[#FEFEFE]">
-              <Link href="/">Contact Us</Link>
+              <Link href="/contact-us">{t('nav.contact')}</Link>
             </li>
           </ul>
         </div>

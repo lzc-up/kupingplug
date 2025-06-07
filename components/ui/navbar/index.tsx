@@ -62,35 +62,27 @@ const Navbar: React.FC<NavbarProps> = () => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <nav className="mx-auto flex max-w-[1440px] items-center justify-between px-8 py-4 lg:justify-normal">
-            <div className="flex items-center gap-1 lg:basis-1/4">
-              <button className="lg:hidden" onClick={() => setOpen(true)}>
-                <HamburgerMenu className={cn(
-                  "w-6 transition-colors duration-200",
-                  isTextTransparent ? "text-white" : "text-gray-800"
-                )} />
-              </button>
-
+          <nav className="mx-auto flex max-w-[1440px] items-center px-2 py-4">
+            <div className="flex items-center gap-4">
               <Logo />
+              <div className="hidden lg:block">
+                <NavLinks isTransparent={isTextTransparent} />
+              </div>
             </div>
-
-            <div className="hidden basis-2/4 lg:block">
-              <NavLinks isTransparent={isTextTransparent} />
-            </div>
-
-            <div className="flex items-center gap-1 lg:basis-1/4 lg:justify-end lg:gap-4">
+            
+            <div className="ml-auto flex items-center gap-1 lg:gap-4">
               <LanguageSwitcher 
                 className={cn(
-                  "text-sm transition-colors duration-200",
+                  "text-sm transition-colors duration-200 whitespace-nowrap",
                   isTextTransparent 
                     ? "text-white hover:text-black" 
                     : "text-gray-600 hover:text-black"
                 )}
               />
             </div>
-
+            
             {/* mobile navbar  */}
-            <NavMobile open={open} onClick={() => setOpen(false)} />
+            {/* <NavMobile open={open} onClick={() => setOpen(false)} /> */}
           </nav>
         </div>
         
