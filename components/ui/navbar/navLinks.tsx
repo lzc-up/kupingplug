@@ -32,7 +32,6 @@ const NavLinks: React.FC<NavLinksProps> = ({ isTransparent }) => {
   ];
 
   const links: NavLinkItem[] = [
-    { href: "/", label: t("nav.home") },
     {
       href: "/products",
       label: t("nav.products"),

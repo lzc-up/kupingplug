@@ -32,11 +32,6 @@ export default function NavMobile({
 
   const links = [
     {
-      id: "home",
-      path: "/",
-      name: t("nav.home"),
-    },
-    {
       id: "products",
       path: "/products",
       name: t("nav.products"),
@@ -73,9 +68,11 @@ export default function NavMobile({
       <div className="flex h-full flex-col justify-between bg-white p-6">
         {/* top section */}
         <div className="flex flex-col gap-4">
-          {/* logo */}
+          {/* logo - 添加链接到首页 */}
           <div className="flex items-center justify-between">
-            <Logo />
+            <Link href="/">
+              <Logo />
+            </Link>
 
             <button onClick={onClick}>
               <CloseIcon className="w-6" />

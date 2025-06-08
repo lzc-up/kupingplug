@@ -31,10 +31,6 @@ const CategoryDisplay: React.FC<CategoryDisplayProps> = ({ category, onViewMore 
   const [categoryMapping, setCategoryMapping] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
-  // 新增：每个产品的当前图片索引
-  const [currentImageIndexes, setCurrentImageIndexes] = useState<Record<string, number>>({});
-  // 新增：图片切换定时器
-  const [imageTimers, setImageTimers] = useState<Record<string, NodeJS.Timeout>>({});
   
   // 每页显示的产品数量
   const itemsPerPage = 4;
@@ -44,20 +40,9 @@ const CategoryDisplay: React.FC<CategoryDisplayProps> = ({ category, onViewMore 
   }, [category]);
 
   useEffect(() => {
-    // 当分类数据变化时重置页码和图片索引
+    // 当分类数据变化时重置页码
     setCurrentPage(0);
-    setCurrentImageIndexes({});
-    // 清理所有定时器
-    Object.values(imageTimers).forEach(timer => clearInterval(timer));
-    setImageTimers({});
   }, [categoryData]);
-
-  // 清理定时器
-  useEffect(() => {
-    return () => {
-      Object.values(imageTimers).forEach(timer => clearInterval(timer));
-    };
-  }, [imageTimers]);
 
   const fetchCategoryData = async () => {
     setLoading(true);
@@ -76,62 +61,6 @@ const CategoryDisplay: React.FC<CategoryDisplayProps> = ({ category, onViewMore 
     } finally {
       setLoading(false);
     }
-  };
-
-  // 新增：处理图片悬停开始
-  const handleImageMouseEnter = (itemId: string, images: string[]) => {
-    if (!images || images.length <= 1) return;
-    
-    // 清除现有定时器
-    if (imageTimers[itemId]) {
-      clearInterval(imageTimers[itemId]);
-    }
-    
-    // 设置新的定时器
-    const timer = setInterval(() => {
-      setCurrentImageIndexes(prev => {
-        const currentIndex = prev[itemId] || 0;
-        const nextIndex = (currentIndex + 1) % images.length;
-        return { ...prev, [itemId]: nextIndex };
-      });
-    }, 500); // 每800ms切换一张图片
-    
-    setImageTimers(prev => ({ ...prev, [itemId]: timer }));
-  };
-
-  // 新增：处理图片悬停结束
-  const handleImageMouseLeave = (itemId: string) => {
-    // 清除定时器
-    if (imageTimers[itemId]) {
-      clearInterval(imageTimers[itemId]);
-      setImageTimers(prev => {
-        const newTimers = { ...prev };
-        delete newTimers[itemId];
-        return newTimers;
-      });
-    }
-    
-    // 重置图片索引
-    setCurrentImageIndexes(prev => {
-      const newIndexes = { ...prev };
-      delete newIndexes[itemId];
-      return newIndexes;
-    });
-  };
-
-  // 新增：获取当前显示的图片
-  const getCurrentImage = (item: CategoryItem) => {
-    if (!item.images || item.images.length === 0) {
-      return item.image;
-    }
-    const currentIndex = currentImageIndexes[item.id] || 0;
-    return item.images[currentIndex] || item.image;
-  };
-
-  // 处理单个产品项点击
-  const handleItemClick = (item: CategoryItem) => {
-    const categoryKey = item.categoryKey || categoryMapping[category] || 'all';
-    router.push(`/products?category=${categoryKey}&item=${item.id}`);
   };
 
   // 处理"查看更多"点击
@@ -220,46 +149,27 @@ const CategoryDisplay: React.FC<CategoryDisplayProps> = ({ category, onViewMore 
             <div
               key={item.id}
               className={cn(
-                "group cursor-pointer transition-all duration-300 transform",
+                "group transition-all duration-300 transform",
                 "hover:scale-105 hover:shadow-lg"
               )}
-              onClick={() => handleItemClick(item)}
             >
               <div className="bg-white rounded-lg overflow-hidden shadow-sm border">
-                <div 
-                  className="aspect-[4/5] relative overflow-hidden"
-                  onMouseEnter={() => handleImageMouseEnter(item.id, item.images || [])}
-                  onMouseLeave={() => handleImageMouseLeave(item.id)}
-                >
+                <div className="aspect-[4/5] relative overflow-hidden">
                   <Image
-                    src={getCurrentImage(item)}
+                    src={item.image}
                     alt={item.name}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-300"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 25vw, 25vw"
                   />
-                  {/* 新增：图片切换指示器 */}
-                  {item.images && item.images.length > 1 && (
-                    <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
-                      {item.images.map((_, index) => (
-                        <div
-                          key={index}
-                          className={cn(
-                            "w-1.5 h-1.5 rounded-full transition-all duration-200",
-                            (currentImageIndexes[item.id] || 0) === index
-                              ? "bg-white"
-                              : "bg-white/50"
-                          )}
-                        />
-                      ))}
-                    </div>
-                  )}
                 </div>
+                
+                {/* 修改产品信息区域 - 移除查看详情，文字居中 */}
                 <div className="p-4 text-center">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  <h3 className="font-medium text-gray-900 mb-2 line-clamp-1">
                     {item.name}
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-600 line-clamp-2">
                     {item.description}
                   </p>
                 </div>
