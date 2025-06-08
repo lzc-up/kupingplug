@@ -42,13 +42,10 @@ const NavLinks: React.FC<NavLinksProps> = ({ isTransparent }) => {
       }))
     },
     { href: "/fabric", label: t("nav.fabric") },
+    { href: "/customization", label: t("nav.customization") },
     { href: "/brand-story", label: t("nav.brandStory") },
     { href: "/contact-us", label: t("nav.contact") },
   ];
-
-  const handleCategoryClick = (categoryKey: string, category: string) => {
-    setSelectedCategory(category);
-  };
 
   // 添加关闭下拉菜单的方法
   const handleCloseDropdown = () => {
@@ -91,6 +88,11 @@ const NavLinks: React.FC<NavLinksProps> = ({ isTransparent }) => {
     setSelectedCategory(null);
   };
 
+  // 新增：处理分类悬停事件
+  const handleCategoryHover = (category: string) => {
+    setSelectedCategory(category);
+  };
+
   return (
     <>
       <ul className="flex items-start gap-9">
@@ -128,7 +130,11 @@ const NavLinks: React.FC<NavLinksProps> = ({ isTransparent }) => {
       {/* 二级导航下拉菜单 */}
       {activeDropdown === "/products" && (
         <div 
-          className="absolute left-0 w-full bg-white shadow-lg border-t z-50"
+          className={cn(
+            "absolute left-0 w-full bg-white shadow-lg border-t z-50",
+            "transform transition-all duration-300 ease-out",
+            "animate-in slide-in-from-top-2 fade-in-0"
+          )}
           style={{ 
             top: '100%',
             left: 'calc(-50vw + 50%)',
@@ -138,16 +144,18 @@ const NavLinks: React.FC<NavLinksProps> = ({ isTransparent }) => {
           onMouseLeave={handleDropdownLeave}
         >
           <div className="max-w-[1440px] mx-auto px-8 py-6">
-            {/* 二级导航栏 - 左对齐 */}
+            {/* 二级导航栏 - 左对齐，改为悬停触发 */}
             <div className="flex gap-8 mb-6">
               {productCategories.map((category) => (
                 <button
                   key={category.key}
-                  onClick={() => handleCategoryClick(category.key, category.category)}
+                  onMouseEnter={() => handleCategoryHover(category.category)}
                   className={cn(
-                    "px-4 py-2 text-sm font-medium transition-all duration-200 rounded-md whitespace-nowrap",
+                    "px-4 py-2 text-sm font-medium rounded-md whitespace-nowrap",
+                    "transition-all duration-300 ease-out",
+                    "transform hover:scale-105 hover:-translate-y-0.5",
                     selectedCategory === category.category
-                      ? "bg-gray-900 text-white"
+                      ? "bg-gray-900 text-white shadow-lg scale-105"
                       : "text-gray-700 hover:text-black hover:bg-gray-100 active:text-black"
                   )}
                 >
@@ -156,9 +164,12 @@ const NavLinks: React.FC<NavLinksProps> = ({ isTransparent }) => {
               ))}
             </div>
 
-            {/* 内容区域 */}
+            {/* 内容区域 - 添加滑动效果 */}
             {selectedCategory && (
-              <div className="mt-4">
+              <div className={cn(
+                "mt-4 transition-all duration-500 ease-out",
+                "animate-in slide-in-from-left-4 fade-in-0"
+              )}>
                 <CategoryDisplay 
                   category={selectedCategory} 
                   onViewMore={handleCloseDropdown}

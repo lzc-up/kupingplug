@@ -1,8 +1,9 @@
 {
   "nav": {
     "home": "首页",
-    "fabric": "面料",
     "products": "产品",
+    "fabric": "面料",
+    "customization": "定制",
     "brandStory": "品牌故事",
     "contact": "联系我们",
     "cart": "购物车",

@@ -5,6 +5,10 @@
         "id": "new1",
         "name": "春季新品",
         "image": "/images/leoga/product/1产品页新品1.png",
+        "images": [
+          "/images/leoga/product/1产品页新品1.png",
+          "/images/leoga/product/3产品页新品3.png"
+        ],
         "description": "春季时尚新款",
         "categoryKey": "newArrivals"
       },
@@ -42,6 +46,10 @@
         "id": "daily",
         "name": "日常",
         "image": "/images/leoga/product/26产品页下半部分商品详情图2.png",
+        "images": [
+          "/images/leoga/product/26产品页下半部分商品详情图2.png",
+          "/images/leoga/product/27产品页下半部分商品详情图3.png"
+        ],
         "description": "日常休闲系列",
         "categoryKey": "suits"
       },

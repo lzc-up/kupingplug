@@ -47,6 +47,11 @@ export default function NavMobile({
       name: t("nav.fabric"),
     },
     {
+      id: "customization",
+      path: "/customization",
+      name: t("nav.customization"),
+    },
+    {
       id: "brand-story",
       path: "/brand-story",
       name: t("nav.brandStory"),
