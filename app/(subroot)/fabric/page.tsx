@@ -9,16 +9,61 @@ import Button from "@/ui/button";
 import VideoPlayer from "@/components/ui/video/VideoPlayer";
 import { ArrowRightIcon } from "@/ui/assets/svg";
 import fabricLibraryData from "@/data/fabricLibrary.json";
+import { useRef, useState } from "react";
 
 export default function FabricsPage() {
   const { fabricLibrary } = fabricLibraryData;
+  const [showPlayButton, setShowPlayButton] = useState(true);
+
+  const handlePlayButtonClick = () => {
+    // 查找页面中的 video 元素
+    const videoElement = document.querySelector('video');
+    if (videoElement) {
+      if (videoElement.paused) {
+        videoElement.play();
+        setShowPlayButton(false);
+      } else {
+        videoElement.pause();
+        setShowPlayButton(true);
+      }
+    }
+  };
 
   return (
     <div className="min-h-screen">
-      {/* 视频区域 */}
+      {/* 视频区域 - 完全铺满屏幕 */}
+      <div className="relative w-full h-screen">
+        <VideoPlayer
+          src="/images/leoga/fabric/顶部动画.mov"
+          poster="/images/leoga/fabric/fabric-video-poster.jpg"
+          controls={true}
+          muted={true}
+          className="w-full h-full object-cover"
+        />
+        
+        {/* 中央播放按钮 */}
+        {showPlayButton && (
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div 
+              className="bg-black bg-opacity-50 rounded-full p-6 pointer-events-auto hover:bg-opacity-70 transition-all duration-300 cursor-pointer"
+              onClick={handlePlayButtonClick}
+            >
+              <svg 
+                className="w-12 h-12 text-white" 
+                fill="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* 标题和描述文字 - 移到视频下方 */}
       <SectionLayout bg="bg-gray-50">
         <div className="py-16 px-8">
-          <div className="text-center mb-12">
+          <div className="text-center">
             <Heading
               as="h1"
               intent="base-section"
@@ -29,22 +74,6 @@ export default function FabricsPage() {
             <Text className="text-gray-600 max-w-4xl mx-auto">
               Explore our exquisite selection of the world's finest fabrics. From luxurious Italian wools to innovative performance blends, discover the materials that define exceptional tailoring and timeless elegance.
             </Text>
-          </div>
-          
-          {/* 视频容器 */}
-          <div className="max-w-4xl mx-auto">
-            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-              {/* 16:9 宽高比容器 */}
-              <div className="absolute inset-0 bg-black rounded-lg shadow-2xl overflow-hidden">
-                <VideoPlayer
-                  src="/images/leoga/fabric/顶部动画.mov"
-                  poster="/images/leoga/fabric-video-poster.jpg"
-                  controls={true}
-                  muted={true}
-                  className="w-full h-full"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </SectionLayout>

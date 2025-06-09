@@ -8,6 +8,7 @@ interface VideoPlayerProps {
   controls?: boolean;
   muted?: boolean;
   loop?: boolean;
+  onLoadedData?: (video: HTMLVideoElement) => void; // 添加这个属性
 }
 
 const VideoPlayer = ({
@@ -18,6 +19,7 @@ const VideoPlayer = ({
   controls = true,
   muted = false,
   loop = false,
+  onLoadedData, // 添加这个参数
 }: VideoPlayerProps ) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -56,6 +58,7 @@ const VideoPlayer = ({
         onPause={() => setIsPlaying(false)}
         onMouseEnter={() => setShowControls(true)}
         onMouseLeave={() => setShowControls(false)}
+        onLoadedData={() => onLoadedData?.(videoRef.current!)} // 添加这行
       >
         您的浏览器不支持视频播放。
       </video>
