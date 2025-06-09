@@ -204,7 +204,7 @@ const CategoryDisplay: React.FC<CategoryDisplayProps> = ({ category, onViewMore 
           onClick={handleViewMore}
           className="text-sm text-gray-500 hover:text-gray-700 hover:underline transition-colors duration-200 cursor-pointer"
         >
-          点击查看更多{category}系列
+          查看更多{category}系列
         </button>
       </div>
     </div>
