@@ -9,11 +9,73 @@ import Button from "@/ui/button";
 import VideoPlayer from "@/components/ui/video/VideoPlayer";
 import { ArrowRightIcon } from "@/ui/assets/svg";
 import fabricLibraryData from "@/data/fabricLibrary.json";
-import { useRef, useState } from "react";
+import actualFabricData from '@/data/fabricData.json'; // 新增：导入新的面料数据
+import { useEffect, useRef, useState } from "react";
 
 export default function FabricsPage() {
-  const { fabricLibrary } = fabricLibraryData;
+  // const { fabricLibrary } = fabricLibraryData; // 旧的假数据
+  const { fabricData } = actualFabricData; // 新增：使用新的面料数据
   const [showPlayButton, setShowPlayButton] = useState(true);
+  
+  // 新增：筛选状态
+  const [activeFilter, setActiveFilter] = useState('成分');
+  // 在组件顶部的状态定义
+  const [hoveredFilter, setHoveredFilter] = useState<string | null>(null); // 新增：悬停状态
+  
+  // 在组件中的函数定义
+  const handleMouseEnter = (filterType: string) => {
+    setHoveredFilter(filterType);
+  };
+  
+  const handleMouseLeave = () => {
+    setHoveredFilter(null);
+  };
+  
+  // 决定当前显示的筛选类型（优先显示悬停的，如果没有悬停则显示激活的）
+  const currentDisplayFilter = hoveredFilter || activeFilter;
+  const [activeSubFilter, setActiveSubFilter] = useState('');
+  const [filteredFabrics, setFilteredFabrics] = useState(fabricData);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // 新增：筛选选项配置 (保持用户定义)
+  const filterOptions: Record<string, string[]> = { 
+    '成分': ['棉', '麻', '羊毛', '丝绸'],
+    '颜色': ['黑色', '白色',  '蓝色',  '棕色'],
+    '图案': ['格子', '千鸟格', '条纹', '纯色'],
+    '重量': ['超轻', '轻便', '中等', '重'],
+    '季节': ['春季', '夏季', '秋季', '冬季'],
+    '场合': ['职业', '婚礼', '宴会', '毕业式']
+  };
+
+  // 更新：处理筛选逻辑
+  const handleFilterChange = (filterType: string, subFilter?: string) => {
+    setActiveFilter(filterType);
+    if (subFilter) {
+      setActiveSubFilter(subFilter);
+      const newFilteredFabrics = fabricData.filter(fabric => 
+        fabric.properties[filterType as keyof typeof fabric.properties] === subFilter
+      );
+      setFilteredFabrics(newFilteredFabrics);
+    } else {
+      setActiveSubFilter('');
+      // 如果只选择了一级筛选，则显示该一级筛选下的所有面料，或者显示全部（如果希望如此）
+      // 当前逻辑：如果只选一级，则显示所有面料
+      setFilteredFabrics(fabricData); 
+    }
+  };
+
+  // 新增：重置筛选
+  const resetFilters = () => {
+    setActiveFilter('成分');
+    setActiveSubFilter('');
+    setFilteredFabrics(fabricData);
+  };
+
+  useEffect(() => {
+    // 模拟数据加载
+    setFilteredFabrics(fabricData);
+    setIsLoading(false);
+  }, []);
 
   const handlePlayButtonClick = () => {
     // 查找页面中的 video 元素
@@ -295,37 +357,103 @@ export default function FabricsPage() {
               >
                 Fabric Library
               </Heading>
-              <Text className="text-gray-600 max-w-3xl mx-auto">
-                Browse our comprehensive fabric library featuring premium materials from around the world. Each fabric is carefully selected for its quality, texture, and versatility.
-              </Text>
             </div>
 
-            {/* 25宫格图片展示 */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              {fabricLibrary.map((fabric) => (
-                <div 
-                  key={fabric.id} 
-                  className="group relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-                >
-                  <div className="relative aspect-square">
-                    <Image
-                      src={fabric.image}
-                      alt={fabric.name}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
-                    />
-                    {/* 悬停时显示的遮罩层 */}
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                      <div className="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <Text className="text-sm font-medium">{fabric.name}</Text>
-                        <Text className="text-xs mt-1">{fabric.category}</Text>
-                      </div>
+            {/* 新增：筛选导航栏 */} 
+            <div className="mb-8">
+              {/* 一级导航 */}
+              <div 
+                className="flex flex-row flex-wrap justify-center gap-4 mb-6 max-w-4xl mx-auto"
+                onMouseLeave={handleMouseLeave} // 当鼠标离开整个导航区域时隐藏二级导航
+              >
+                {Object.keys(filterOptions).map((filterType) => (
+                  <button
+                    key={filterType}
+                    onClick={() => handleFilterChange(filterType)}
+                    onMouseEnter={() => handleMouseEnter(filterType)} // 鼠标进入时显示对应二级导航
+                    className={`px-6 py-3 rounded-full transition-all duration-300 text-center text-sm sm:text-base ${
+                      activeFilter === filterType
+                        ? 'bg-black text-white shadow-lg'
+                        : hoveredFilter === filterType
+                        ? 'bg-gray-200 text-gray-800 shadow-md' // 悬停时的样式
+                        : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                    }`}
+                  >
+                    {filterType}
+                  </button>
+                ))}
+              </div>
+
+              {/* 二级导航 - 修改显示逻辑 */} 
+              {currentDisplayFilter && filterOptions[currentDisplayFilter] && (
+                <div className="max-w-4xl mx-auto mb-6 transition-all duration-300 ease-in-out">
+                  <div className="flex justify-center">
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      {filterOptions[currentDisplayFilter].map((subOption) => (
+                        <button
+                          key={subOption}
+                          onClick={() => handleFilterChange(currentDisplayFilter, subOption)}
+                          className={`px-4 py-2 rounded-full transition-all duration-300 text-center text-xs sm:text-sm ${
+                            activeSubFilter === subOption && activeFilter === currentDisplayFilter
+                              ? 'bg-gray-800 text-white'
+                              : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
+                          }`}
+                        >
+                          {subOption}
+                        </button>
+                      ))}
                     </div>
                   </div>
                 </div>
-              ))}
+              )}
+               {/* 新增：重置筛选按钮 */}
+               <div className="text-center mb-8">
+                <Button 
+                  onClick={resetFilters}
+                  className="text-sm"
+                >
+                  重置筛选
+                </Button>
+              </div>
             </div>
+
+            {/* 25宫格图片展示 */}
+            {isLoading ? (
+              <div className="text-center py-10">
+                <Text>加载面料中...</Text>
+              </div>
+            ) : filteredFabrics.length > 0 ? (
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                {filteredFabrics.map((fabric) => (
+                  <div 
+                    key={fabric.id} 
+                    className="group relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                  >
+                    <div className="relative aspect-square">
+                      <Image
+                        src={fabric.image} 
+                        alt={fabric.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
+                        priority={fabric.id <= 10} //  优化LCP，优先加载前10张图片
+                      />
+                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center p-2">
+                        <div className="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <Text className="text-sm font-semibold">{fabric.name}</Text> 
+                          {/* 可以根据需要显示更多属性 */}
+                          {/* <Text className="text-xs mt-1">{fabric.properties['颜色']}</Text> */}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-10">
+                <Text>没有找到符合条件的面料。</Text>
+              </div>
+            )}
 
             {/* 底部按钮 */}
             <div className="text-center mt-12">
