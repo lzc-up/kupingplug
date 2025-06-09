@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -35,16 +35,7 @@ const CategoryDisplay: React.FC<CategoryDisplayProps> = ({ category, onViewMore 
   // 每页显示的产品数量
   const itemsPerPage = 4;
   
-  useEffect(() => {
-    fetchCategoryData();
-  }, [category]);
-
-  useEffect(() => {
-    // 当分类数据变化时重置页码
-    setCurrentPage(0);
-  }, [categoryData]);
-
-  const fetchCategoryData = async () => {
+  const fetchCategoryData = useCallback(async () => {
     setLoading(true);
     try {
       const response = await fetch('/api/category-display');
@@ -61,7 +52,16 @@ const CategoryDisplay: React.FC<CategoryDisplayProps> = ({ category, onViewMore 
     } finally {
       setLoading(false);
     }
-  };
+  }, [category]); // 只依赖于 category
+  
+  useEffect(() => {
+    fetchCategoryData();
+  }, [fetchCategoryData]); // 现在可以安全地包含 fetchCategoryData
+
+  useEffect(() => {
+    // 当分类数据变化时重置页码
+    setCurrentPage(0);
+  }, [categoryData]);
 
   // 处理"查看更多"点击
   const handleViewMore = () => {
