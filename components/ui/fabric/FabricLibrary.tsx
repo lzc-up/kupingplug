@@ -144,7 +144,7 @@ export default function FabricLibrary({ className }: FabricLibraryProps) {
             </Heading>
           </div>
           {/* 筛选导航栏 */}
-          <div className="mb-8 relative">
+          <div className="mb-16 relative"> {/* 增加底部间距从mb-8改为mb-16 */}
             {/* 一级导航 - 将筛选按钮移到最前面 */}
             <div className="flex flex-row flex-wrap justify-center gap-4 mb-6 max-w-4xl mx-auto relative">
               {/* 筛选提示标签 - 移到最前面 */}
