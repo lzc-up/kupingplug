@@ -11,8 +11,6 @@ import FabricLibrary from "@/components/ui/fabric/FabricLibrary";
 import { ArrowRightIcon } from "@/ui/assets/svg";
 import fabricLibraryData from "@/data/fabricLibrary.json";
 import { useEffect, useRef, useState } from "react";
-import { FaceIcon, ImageIcon, SunIcon } from "@radix-ui/react-icons"
-import { Slider } from '@radix-ui/react-com';
 
 export default function FabricsPage() {
   const { fabricLibrary } = fabricLibraryData;
@@ -148,7 +146,6 @@ export default function FabricsPage() {
 
       {/* 面料库部分 - 使用新的组件 */}
       <FabricLibrary />
-      <Slider defaultValue={[50]} />
     </div>
   );
 }
