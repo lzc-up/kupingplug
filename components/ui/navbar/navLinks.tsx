@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState, useRef } from "react";
+import { useRouter } from "next/navigation"; // 添加这行
 import { useTranslation } from "@/hooks/useTranslation";
 import { cn } from "@/lib/utils";
 import ProductCarousel from "./ProductCarousel";
@@ -19,6 +20,7 @@ interface NavLinksProps {
 
 const NavLinks: React.FC<NavLinksProps> = ({ isTransparent }) => {
   const { t } = useTranslation();
+  const router = useRouter(); // 添加 useRouter
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -92,6 +94,26 @@ const NavLinks: React.FC<NavLinksProps> = ({ isTransparent }) => {
     setSelectedCategory(category);
   };
 
+  // 新增：处理分类点击事件
+  const handleCategoryClick = (category: string) => {
+    // 关闭下拉菜单
+    handleCloseDropdown();
+    
+    // 根据分类名称映射到对应的categoryKey
+    const categoryKeyMap: Record<string, string> = {
+      "新品": "newArrivals",
+      "套装": "suits", 
+      "上装": "tops",
+      "下装": "bottoms",
+      "配饰": "accessories"
+    };
+    
+    const categoryKey = categoryKeyMap[category] || category.toLowerCase();
+    
+    // 跳转到产品页面
+    router.push(`/products?category=${categoryKey}`);
+  };
+
   return (
     <>
       <ul className="flex items-start gap-9">
@@ -107,6 +129,12 @@ const NavLinks: React.FC<NavLinksProps> = ({ isTransparent }) => {
             >
               <Link
                 href={link.href}
+                onClick={(e) => {
+                  // 如果是 products 链接，阻止默认跳转
+                  if (link.href === "/products") {
+                    e.preventDefault();
+                  }
+                }}
                 className={cn(
                   "text-sm font-medium transition-all duration-200 px-3 py-2 rounded-md whitespace-nowrap",
                   isProductsActive ? "underline" : "hover:underline",
@@ -143,16 +171,18 @@ const NavLinks: React.FC<NavLinksProps> = ({ isTransparent }) => {
           onMouseLeave={handleDropdownLeave}
         >
           <div className="max-w-[1440px] mx-auto px-8 py-6">
-            {/* 二级导航栏 - 左对齐，改为悬停触发 */}
+            {/* 二级导航栏 - 添加点击事件 */}
             <div className="flex gap-8 mb-6">
               {productCategories.map((category) => (
                 <button
                   key={category.key}
                   onMouseEnter={() => handleCategoryHover(category.category)}
+                  onClick={() => handleCategoryClick(category.category)} // 添加点击事件
                   className={cn(
                     "px-4 py-2 text-sm font-medium rounded-md whitespace-nowrap",
                     "transition-all duration-300 ease-out",
                     "transform hover:scale-105 hover:-translate-y-0.5",
+                    "cursor-pointer", // 添加指针样式
                     selectedCategory === category.category
                       ? "bg-gray-900 text-white shadow-lg scale-105"
                       : "text-gray-700 hover:text-black hover:bg-gray-100 active:text-black"

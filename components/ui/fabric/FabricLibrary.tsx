@@ -225,8 +225,8 @@ export default function FabricLibrary({ className }: FabricLibraryProps) {
               <Text>加载面料中...</Text>
             </div>
           ) : filteredFabrics.length > 0 ? (
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              {filteredFabrics.map((fabric) => (
+            <div className="grid grid-cols-4 gap-4 max-w-4xl mx-auto">
+              {filteredFabrics.slice(0, 16).map((fabric) => (
                 <div 
                   key={fabric.id} 
                   className="group relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
@@ -245,6 +245,12 @@ export default function FabricLibrary({ className }: FabricLibraryProps) {
                         <Text className="text-sm font-semibold">{fabric.name}</Text>
                       </div>
                     </div>
+                  </div>
+                  {/* 图片下方的文字 */}
+                  <div className="p-3">
+                    <Text className="text-sm text-gray-700 text-center font-medium">
+                      {fabric.name}
+                    </Text>
                   </div>
                 </div>
               ))}
