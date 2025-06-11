@@ -240,11 +240,11 @@ export default function FabricLibrary({ className }: FabricLibraryProps) {
                       sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
                       priority={fabric.id <= 10}
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center p-2">
+                    {/* <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center p-2">
                       <div className="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <Text className="text-sm font-semibold">{fabric.name}</Text>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                   {/* 图片下方的文字 */}
                   <div className="p-3">
