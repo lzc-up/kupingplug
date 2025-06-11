@@ -225,35 +225,37 @@ export default function FabricLibrary({ className }: FabricLibraryProps) {
               <Text>加载面料中...</Text>
             </div>
           ) : filteredFabrics.length > 0 ? (
-            <div className="grid grid-cols-4 gap-4 max-w-4xl mx-auto">
-              {filteredFabrics.slice(0, 16).map((fabric) => (
-                <div 
-                  key={fabric.id} 
-                  className="group relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-                >
-                  <div className="relative aspect-square">
-                    <Image
-                      src={fabric.image} 
-                      alt={fabric.name}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
-                      priority={fabric.id <= 10}
-                    />
-                    {/* <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center p-2">
-                      <div className="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <Text className="text-sm font-semibold">{fabric.name}</Text>
-                      </div>
-                    </div> */}
+            <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+              <div className="grid grid-cols-4 gap-6 sm:gap-8 md:gap-10 lg:gap-12 max-w-none mx-auto">
+                {filteredFabrics.slice(0, 16).map((fabric) => (
+                  <div 
+                    key={fabric.id} 
+                    className="group relative overflow-hidden transition-all duration-300"
+                  >
+                    <div className="relative aspect-[4/5] rounded-lg overflow-hidden">
+                      <Image
+                        src={fabric.image} 
+                        alt={fabric.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
+                        priority={fabric.id <= 10}
+                      />
+                      {/* <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center p-2">
+                        <div className="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <Text className="text-sm font-semibold">{fabric.name}</Text>
+                        </div>
+                      </div> */}
+                    </div>
+                    {/* 图片下方的文字 */}
+                    <div className="pt-4 px-2">
+                      <Text className="text-sm text-gray-700 text-center font-medium">
+                        {fabric.name}
+                      </Text>
+                    </div>
                   </div>
-                  {/* 图片下方的文字 */}
-                  <div className="p-3">
-                    <Text className="text-sm text-gray-700 text-center font-medium">
-                      {fabric.name}
-                    </Text>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           ) : (
             <div className="text-center py-10">
