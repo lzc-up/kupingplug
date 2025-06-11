@@ -48,7 +48,7 @@ const platformColors = {
 };
 
 const SocialIcon = ({ url, platform, size = 24, className = '', showLabel = false }: SocialIconProps) => {
-  const getPlatform = (url) => {
+  const getPlatform = (url: string): Platform | null => {
     if (platform) return platform; // 如果直接传入platform，优先使用
     
     try {
