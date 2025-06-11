@@ -1,5 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import * as dotenv from 'dotenv';
+import * as fs from 'fs';
+import * as os from 'os';
+import * as path from 'path';
+
+// 加载用户自定义环境文件
+const envSuitPath = path.join(os.homedir(), '.env.suit');
+if (fs.existsSync(envSuitPath)) {
+  dotenv.config({ path: envSuitPath });
+}
 
 interface ContactFormData {
   name: string;
