@@ -119,9 +119,7 @@ export default function FabricsPage() {
                 {fabricLibrary.slice(0, 4).map((fabric, index) => (
                   <div 
                     key={fabric.id} 
-                    className={`relative overflow-hidden rounded-lg shadow-lg group ${
-                      index === 0 ? 'row-span-2' : 'aspect-square'
-                    }`}
+                    className="relative overflow-hidden rounded-lg shadow-lg group aspect-square"
                   >
                     <Image
                       src={fabric.image}
@@ -144,6 +142,58 @@ export default function FabricsPage() {
         </div>
       </SectionLayout>
 
+      {/* 2024 Autumn/Winter Highlights Section */}
+      <SectionLayout bg="bg-gray-50">
+        <div className="py-16 px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left: Images */}
+              <div className="grid grid-cols-2 gap-4">
+                {fabricLibrary.slice(0, 4).map((fabric) => (
+                  <div
+                    key={fabric.id}
+                    className="relative overflow-hidden rounded-lg shadow-lg aspect-square"
+                  >
+                    <Image
+                      src={fabric.image}
+                      alt={fabric.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 50vw, 25vw"
+                    />
+                  </div>
+                ))}
+              </div>
+              {/* Right: Text Content */}
+              <div className="space-y-6">
+                <Heading as="h2" intent="base-section" className="mb-4">
+                  2024 Autumn/Winter Highlights
+                </Heading>
+                <Text className="text-gray-600 leading-relaxed">
+                  Discover our top picks for the autumn/winter season, combining warmth and style for every occasion.
+                </Text>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
+                    <Text className="text-gray-600">Premium wool and innovative blends</Text>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
+                    <Text className="text-gray-600">Rich colors and classic patterns</Text>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
+                    <Text className="text-gray-600">Comfortable, warm, and easy care</Text>
+                  </div>
+                </div>
+                <Button variant="primary" className="mt-6">
+                  Learn More
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </SectionLayout>
       {/* 面料库部分 - 使用新的组件 */}
       <FabricLibrary />
     </div>

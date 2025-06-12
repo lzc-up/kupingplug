@@ -130,9 +130,9 @@ const NavLinks: React.FC<NavLinksProps> = ({ isTransparent }) => {
               <Link
                 href={link.href}
                 onClick={(e) => {
-                  // 如果是 products 链接，阻止默认跳转
                   if (link.href === "/products") {
                     e.preventDefault();
+                    router.push("/");
                   }
                 }}
                 className={cn(

@@ -154,7 +154,7 @@ const CategoryDisplay: React.FC<CategoryDisplayProps> = ({ category, onViewMore 
               )}
             >
               <div className="bg-white rounded-lg overflow-hidden shadow-sm border">
-                <div className="aspect-[4/5] relative overflow-hidden">
+                <div className="aspect-square relative overflow-hidden">
                   <Image
                     src={item.image}
                     alt={item.name}
@@ -163,16 +163,22 @@ const CategoryDisplay: React.FC<CategoryDisplayProps> = ({ category, onViewMore 
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 25vw, 25vw"
                   />
                 </div>
-                
-                {/* 修改产品信息区域 - 移除查看详情，文字居中 */}
-                <div className="p-4 text-center">
-                  <h3 className="font-medium text-gray-900 mb-2 line-clamp-1">
-                    {item.name}
-                  </h3>
-                  <p className="text-sm text-gray-600 line-clamp-2">
-                    {item.description}
-                  </p>
-                </div>
+                {((category === "新品" || category === "NEW ARRIVAL") ? (
+                  <div className="p-4 text-center">
+                    <h3 className="font-medium text-gray-900 mb-2 line-clamp-1">
+                      {item.name}
+                    </h3>
+                  </div>
+                ) : (
+                  <div className="p-4 text-center">
+                    <h3 className="font-medium text-gray-900 mb-2 line-clamp-1">
+                      {item.name}
+                    </h3>
+                    <p className="text-sm text-gray-600 line-clamp-2">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           ))}

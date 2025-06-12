@@ -3,7 +3,7 @@
     "新品": [
       {
         "id": "new1",
-        "name": "春季新品",
+        "name": "商品1",
         "image": "/images/leoga/product/1产品页新品1.png",
         "images": [
           "/images/leoga/product/1产品页新品1.png",
@@ -14,28 +14,28 @@
       },
       {
         "id": "new2",
-        "name": "夏季新品",
+        "name": "商品2",
         "image": "/images/leoga/product/2产品页新品2.png",
         "description": "夏季清爽系列",
         "categoryKey": "newArrivals"
       },
       {
         "id": "new3",
-        "name": "秋季新品",
+        "name": "商品3",
         "image": "/images/leoga/product/3产品页新品3.png",
         "description": "秋季经典款式",
         "categoryKey": "newArrivals"
       },
       {
         "id": "new4",
-        "name": "冬季新品",
+        "name": "商品4",
         "image": "/images/leoga/product/4产品页新品4.png",
         "description": "冬季保暖系列",
         "categoryKey": "newArrivals"
       },
       {
         "id": "new5",
-        "name": "四季新品",
+        "name": "商品5",
         "image": "/images/leoga/product/5产品页新品5.png",
         "description": "四季系列",
         "categoryKey": "newArrivals"

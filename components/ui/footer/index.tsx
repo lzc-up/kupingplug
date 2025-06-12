@@ -24,7 +24,7 @@ const Footer = () => {
             </h3>
             <span className="h-[1px] w-8 rounded-full bg-[#6C7275] lg:hidden"></span>
             <Text size="sm" color="white/900" className="lg:pl-8">
-              Headphone Store
+              Suit Store
             </Text>
           </div>
 
