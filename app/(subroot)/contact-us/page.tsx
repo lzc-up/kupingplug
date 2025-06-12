@@ -11,6 +11,7 @@ import Button from "@/ui/button";
 import Heading from "@/ui/head";
 import Text from "@/ui/text";
 import Input from "@/form/input";
+import { InstagramIcon, FacebookIcon, YoutubeIcon, WechatIcon, XiaohongshuIcon} from "@/ui/assets/svg";
 
 interface FormData {
   name: string;
@@ -76,6 +77,24 @@ export default function ContactUsPage() {
       {/* Hero Section */}
       <SectionLayout className="py-16 px-4">
         <div className="mx-auto max-w-4xl text-center">
+          {/* 官方色彩社交媒体图标区域 */}
+          <div className="flex justify-center gap-4 mb-6">
+            <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <InstagramIcon className="w-7 h-7" />
+            </a>
+            <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <FacebookIcon className="w-7 h-7" />
+            </a>
+            <a href="#" aria-label="Youtube" target="_blank" rel="noopener noreferrer">
+              <YoutubeIcon className="w-7 h-7" />
+            </a>
+            <a href="#" aria-label="Wechat" target="_blank" rel="noopener noreferrer">
+              <WechatIcon className="w-7 h-7" />
+            </a>
+            <a href="#" aria-label="小红书" target="_blank" rel="noopener noreferrer">
+              <XiaohongshuIcon className="w-7 h-7" />
+            </a>
+          </div>
           <Heading as="h1" className="mb-4 text-4xl font-bold text-[#141718] md:text-5xl">
             Contact Us
           </Heading>

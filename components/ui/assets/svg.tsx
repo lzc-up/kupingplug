@@ -418,21 +418,29 @@ export const InstagramIcon: React.FC<SVGComponentProps> = ({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
+      <defs>
+        <linearGradient id="instagram-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#f58529" />
+          <stop offset="30%" stopColor="#dd2a7b" />
+          <stop offset="60%" stopColor="#8134af" />
+          <stop offset="100%" stopColor="#515bd4" />
+        </linearGradient>
+      </defs>
       <rect
         x="2"
         y="2"
         width="20"
         height="20"
         rx="4"
-        stroke={cn(stroke ? stroke : "#141718")}
+        stroke={stroke ? stroke : "url(#instagram-gradient)"}
         strokeWidth="1.5"
       />
-      <circle cx="18" cy="6" r="1" fill={cn(fill ? fill : "#141718")} />
+      <circle cx="18" cy="6" r="1" fill={fill ? fill : "url(#instagram-gradient)"} />
       <circle
         cx="12"
         cy="12"
         r="5"
-        stroke={cn(stroke ? stroke : "#141718")}
+        stroke={stroke ? stroke : "url(#instagram-gradient)"}
         strokeWidth="1.5"
       />
     </svg>
@@ -454,7 +462,7 @@ export const FacebookIcon: React.FC<SVGComponentProps> = ({
     >
       <path
         d="M18 3H15C12.2386 3 10 5.23858 10 8V10H6V14H10V21H14V14H18V10H14V8C14 7.44772 14.4477 7 15 7H18V3Z"
-        stroke={cn(stroke ? stroke : "#141718")}
+        stroke={stroke ? stroke : "#1877F3"}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -462,6 +470,31 @@ export const FacebookIcon: React.FC<SVGComponentProps> = ({
     </svg>
   );
 };
+
+export const WechatIcon: React.FC<SVGComponentProps> = ({
+  fill,
+  className,
+}) => {
+  return (
+    <svg 
+    className={cn(className)}
+    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Wechat-Logo--Streamline-Logos-Block" height="24" width="24"> <desc> WeChat Logo Streamline Icon: https://streamlinehq.com </desc> <path fill="#07C160" fill-rule="evenodd" d="M5 1a4 4 0 0 0 -4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4 -4V5a4 4 0 0 0 -4 -4H5Zm10.206 7.777c0.08 0 0.161 0.001 0.241 0.004 -0.653 -1.998 -2.926 -3.473 -5.629 -3.473C6.605 5.308 4 7.392 4 9.963c0 1.467 0.848 2.775 2.174 3.629L5.94 15.78l2.562 -1.284c0.423 0.079 0.864 0.12 1.317 0.12l0.02 0c-0.1 -0.355 -0.153 -0.73 -0.153 -1.118 0 -2.727 2.602 -4.723 5.521 -4.723Zm-7.335 0.357a0.727 0.727 0 1 0 0 -1.455 0.727 0.727 0 0 0 0 1.455Zm4.597 -0.728a0.727 0.727 0 1 1 -1.454 0 0.727 0.727 0 0 1 1.454 0Zm2.738 9.088c-2.2 0 -4.053 -1.235 -4.617 -2.917a3.378 3.378 0 0 1 -0.177 -1.078c0 -2.207 2.146 -3.995 4.794 -3.995 0.136 0 0.27 0.005 0.404 0.014 2.459 0.17 4.39 1.888 4.39 3.98 0 1.184 -0.617 2.247 -1.598 2.978l0.4 2.216 -2.797 -1.254c-0.26 0.037 -0.527 0.056 -0.799 0.056Zm-1.577 -4.725a0.546 0.546 0 1 0 0 -1.09 0.546 0.546 0 0 0 0 1.09Zm3.703 -0.545a0.545 0.545 0 1 1 -1.09 0 0.545 0.545 0 0 1 1.09 0Z" clip-rule="evenodd" stroke-width="1"></path>
+    </svg>
+  );
+};
+
+export function XiaohongshuIcon({ className }: { className?: string }) {
+  return (
+    <img
+      src="/images/xiaohongshu.svg"
+      alt="小红书"
+      width={24}
+      height={24}
+      className={className}
+      style={{ display: 'inline-block', verticalAlign: 'middle' }}
+    />
+  );
+}
 
 export const YoutubeIcon: React.FC<SVGComponentProps> = ({
   stroke,
@@ -482,15 +515,16 @@ export const YoutubeIcon: React.FC<SVGComponentProps> = ({
         width="20"
         height="18"
         rx="4"
-        stroke={cn(stroke ? stroke : "#141718")}
+        stroke={stroke ? stroke : "#FF0000"}
         strokeWidth="1.5"
       />
       <path
         d="M10.4472 8.72361L15.2111 11.1056C15.9482 11.4741 15.9482 12.5259 15.2111 12.8944L10.4472 15.2764C9.78231 15.6088 9 15.1253 9 14.382V9.61803C9 8.87465 9.78231 8.39116 10.4472 8.72361Z"
-        stroke={cn(stroke ? stroke : "#141718")}
+        stroke={stroke ? stroke : "#FF0000"}
         strokeWidth="1.5"
         strokeLinecap="round"
       />
     </svg>
   );
 };
+
